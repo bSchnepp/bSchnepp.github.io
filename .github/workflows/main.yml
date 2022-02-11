@@ -1,0 +1,32 @@
+name: publisher
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Setup checkout"
+        uses: actions/checkout@v2
+      
+      - name: "Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.18
+      
+      - name: "Install dependencies"
+        run: npm install
+      
+      - name: "Build project"
+        run: npm run build && cd build && touch .nojekyll
+      
+      - name: "Publish project"
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: publish
+          FOLDER: build
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
