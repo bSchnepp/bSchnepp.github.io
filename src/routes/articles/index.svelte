@@ -3,18 +3,20 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Articles</title>
 </svelte:head>
 
 <div>
+	<h1>Articles</h1>
 	<section>
-		<h1>
-			Placeholder content
-		</h1>
+		<h2>AArch64 OS Development</h2>
+			<h3><a href="/articles/arm/mmu">MMU Programming</a></h3>
+			<h3><a href="/articles/arm/gic">GIC Programming</a></h3>
+	</section>
 
-		<h2>
-			Something will be here soon!
-		</h2>
+	<section>
+		<h2>Graphics Programming with OpenGL</h2>
+			<h3>Nothing here yet!</h3>
 	</section>
 </div>
 
@@ -29,5 +31,13 @@
 
 	h1 {
 		width: 100%;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+	
+	h3 {
+		color: #cccccc;
 	}
 </style>

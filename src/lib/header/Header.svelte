@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import feather from 'feather-icons';
 </script>
 
 <header>
@@ -13,13 +14,13 @@
 				<a sveltekit:prefetch href="/articles">Articles</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		<svg viewBox="0 0 4 3" aria-hidden="true">
+			<path d="M0,0 L0,3 C0,3 2,3 3,2 L3,0 Z" />
+		</svg>			
 	</nav>
-
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+	<div>
+		<a class="vertli" href="https://github.com/bSchnepp">{@html feather.icons.github.toSvg()}</a>
+		<a class="vertli" href="https://twitter.com/brschnepp">{@html feather.icons.twitter.toSvg()}</a>
 	</div>
 </header>
 
@@ -27,21 +28,25 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		width: 100%;
 	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
+	.vertli {
+		display: block;
+		text-align: center;
+		margin-left: 2em;
 	}
 
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: rgba(235, 235, 235, 0.9);
 	}
 
 	svg {
-		width: 2em;
+		width: 4em;
 		height: 3em;
 		display: block;
 	}
